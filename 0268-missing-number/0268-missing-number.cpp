@@ -2,21 +2,11 @@ class Solution {
 public:
     int missingNumber(vector<int>& nums) {
         int n=nums.size();
-        for(int i=0;i<=n;i++){
-            bool found=false;
-            for(int j=0;j<n;j++){
-                if (nums[j]==i){
-                    found=true;
-                    break;
-                }
-            }
-            if(!found){
-                return i;
-            }
-                 
-
+        int actsum=0;
+        int expsum= n*(n+1)/2;
+        for(int i=0;i<n;i++){
+            actsum+=nums[i];
         }
-        return -1;
-        
+    return expsum-actsum;
     }
 };
